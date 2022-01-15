@@ -76,7 +76,6 @@ body {
     }
 }
 
-/* select page */
 .param-containers {
     margin-top: 6vh;
     justify-self: center;
@@ -97,6 +96,11 @@ body {
     padding-bottom: 20px;
     font-size: 3vh;
     font-weight: 400;
+}
+
+.text-input {
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 
