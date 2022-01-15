@@ -12,7 +12,7 @@ def synonyms(term):
     return [span.text for span in soup.findAll('a', {'class': 'css-1kg1yv8 eh475bn0'})] # 'css-1gyuw4i eh475bn0' for less relevant synonyms
 
 # Returns a dictionary of restaurants in order of value
-def getRestaurantOrder():
+def getRestaurantOrder(name, google_rating, num_reviews):
     # Grabs an array of synonyms for given word
     # TODO CHANGE THE WORD TO THE INPUT FROM GULLEY
     word = "unique".lower()
@@ -23,51 +23,44 @@ def getRestaurantOrder():
     file = open("yelpRating.json")
     data = json.load(file)
 
+    # Open text file
+    text_file = open("review.txt", "r")
+ 
+    #R ead whole file to a string and then convert to a list
+    dataReview = text_file.read()
+    dataReview = re.sub('[^A-Za-z0-9\s]+', '', dataReview)
+    result = dataReview.split()
+ 
     # Dictionary for holding Restaurants and their final rating
     restaurantOrder = {}
 
-    for i in range (1, 11):
-        # There will be 10 JSON files for each restaurant which contains the ratings
-        f = open("data" + str(i) + ".json")
+    # Grabbing data from JSON files
+    google_rating = google_rating
 
-        data1 = json.load(f)
+    for j in data["restaurants"]:
+        if name == j["name"]:
+            yelp_rating = int(j["rating"])
 
-        # Grabbing data from JSON files
-        restaurant_name = (data1["name"])
-        google_rating = int(data1["rating"])
-        num_reviews = int(data1["numReviews"])
+    # Counting the amount of times the synonyms appear in the reviews
+    amount = 0
+    for x in array1:
+        amount += result.count(x[:-1])
+    amount += result.count(word)
+    print(amount)
 
-        for j in data["restaurants"]:
-            if restaurant_name == j["name"]:
-                yelp_rating = int(j["rating"])
+    # Doing the calculation
+    calculation = (amount / num_reviews) + ((google_rating + yelp_rating)/2) 
+    restaurantOrder[name] = calculation
 
-        reviews = (data1["reviews"]).lower()
-        reviews = re.sub('[^A-Za-z0-9\s]+', '', reviews)
-
-        amount = 0
-        result = reviews.split()
-        print(result)
-        # Counting the amount of times the synonyms appear in the reviews
-        for x in array1:
-            amount += result.count(x[:-1])
-        amount += result.count(word)
-        print(amount)
-
-        # Doing the calculation
-        calculation = (amount / num_reviews) + ((google_rating + yelp_rating)/2) 
-        restaurantOrder[restaurant_name] = calculation
-
-        f.close()
-
-    # Sorting the dictionary by value
-    sortedOrder = sorted(restaurantOrder.items(), key = lambda x: x[1], reverse = True)    
-    print(sortedOrder)
-
+    # Close files and return dictionary
     file.close()
-    return sortedOrder
+    text_file.close()
+
+    print(restaurantOrder)
+    return restaurantOrder
 
 def main():
-    getRestaurantOrder()
+    getRestaurantOrder("Japonais", 5, 100)
 
 if __name__ == "__main__":
     main()
