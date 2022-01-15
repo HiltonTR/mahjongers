@@ -32,7 +32,11 @@ for i in range (1, 11):
     restaurant_name = (data1["name"])
     google_rating = int(data1["rating"])
     num_reviews = int(data1["numReviews"])
-    yelp_rating = int(data[restaurant_name])
+
+    for j in data["restaurants"]:
+        if restaurant_name == j["name"]:
+            yelp_rating = int(j["rating"])
+
     reviews = (data1["reviews"]).lower()
     amount = 0
     result = reviews.split()
@@ -43,7 +47,7 @@ for i in range (1, 11):
     amount += result.count(word)
     print(amount)
 
-    calculation = (amount / num_reviews) * ((google_rating + yelp_rating)/2)
+    calculation = (amount / num_reviews) * ((google_rating + yelp_rating)/2) 
     restaurantOrder[restaurant_name] = calculation
 
     f.close()
