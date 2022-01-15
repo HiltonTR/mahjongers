@@ -47,7 +47,7 @@ for i in range (1, 11):
     amount += result.count(word)
     print(amount)
 
-    calculation = (amount / num_reviews) * ((google_rating + yelp_rating)/2) 
+    calculation = (amount / num_reviews) + ((google_rating + yelp_rating)/2) 
     restaurantOrder[restaurant_name] = calculation
 
     f.close()
