@@ -15,7 +15,7 @@ def synonyms(term):
 def getRestaurantOrder():
     # Grabs an array of synonyms for given word
     # TODO CHANGE THE WORD TO THE INPUT FROM GULLEY
-    word = "cozy".lower()
+    word = "unique".lower()
     array1 = synonyms(word).copy()
     print(array1)
 
@@ -65,3 +65,9 @@ def getRestaurantOrder():
 
     file.close()
     return sortedOrder
+
+def main():
+    getRestaurantOrder()
+
+if __name__ == "__main__":
+    main()
