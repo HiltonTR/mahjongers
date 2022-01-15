@@ -2,5 +2,32 @@
 <html>
     <head>
         <title>Select</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="selectScript.js" defer></script>
     </head>
+    <body>
+        <div class="select-container">
+            <h1 class="title" class="fade-in">Set your parameters:</h1>
+            <div class="param-containers">
+                <div id="radius" class="param-container">
+                    <h2>radius</h2>
+                    <input type="range" min="1" max="40" value="5">
+                </div>
+                <div id="mood" class="param-container">
+                    <h2>mood</h2>
+                    <input type="text" placeholder="Enter the mood">
+                </div>
+                <div id="cuisine" class="param-container">
+                    <h2>cuisine</h2>
+                    <input type="text" placeholder="Enter the cuisine">
+                </div>
+                <div id="location" class="param-container">
+                    <h2>location</h2>
+                    <input type="text" placeholder="Enter your location">
+                </div>
+
+            </div>
+        </div>
+    </body>
 </html>
