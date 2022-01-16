@@ -7,7 +7,7 @@ const body = document.querySelector("body");
 const submitButton = document.getElementById("submit-button");
 submitButton.addEventListener("mousebuttonup", submit);
 
-const response;
+let responseString;
 
 async function submit() {
     localStorage.clear();
@@ -29,8 +29,9 @@ async function submit() {
             body: JSON.stringify(formArray) // body data type must match "Content-Type" header
         }).then(data => data.json());
         localStorage.setItem("response", JSON.stringify(response));
-        response = localStorage.getItem("response");
-        displayResults();
+        responseString = JSON.parse(localStorage.getItem("response"));
+        alert(JSON.parse(localStorage.getItem("response")));
+        displayResults(responseString);
     }
 }
 //to be used in rest.... page
@@ -64,7 +65,7 @@ function getOptionalInputs() {
     return location.value;
 }
 
-function displayResults() {
+function displayResults(response) {
     body.classList.toggle("fade-in");
     console.log("clearing the webpage...");
     clearBody(body);
@@ -75,7 +76,6 @@ function displayResults() {
     console.log("finished adding a title")
     // display the results max 5 could be less
     addResult(body);
-    console.log(localStorage.getItem(response));
 
     // add a restaurant
 
@@ -95,8 +95,6 @@ function addTitle(parent) {
     parent.appendChild(title);
 }
 
-console.log(localStorage.getItem(response));
 function addResult(parent) {
     var resultsContainer = document.createElement("div");
-
 }
