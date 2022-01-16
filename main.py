@@ -17,7 +17,7 @@ def main(content):
     if (len(content) == 5):
         inputs = {
             "term": content[2],
-            "location": content[4],
+            "location": content[4] + ", " + content[3],
             "radius": content[0] + "000",
             "available": "false",
             "limit": "5",
@@ -41,7 +41,6 @@ def main(content):
 
     # Thomas Code
     writeToJson(inputs, "yelpRating.json")
-
     restaurantList, address_list = getInfo()
     # Hilton Code
     chrome_options = Options()
@@ -54,7 +53,7 @@ def main(content):
         driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options = chrome_options)
     for i in range(0, len(restaurantList)):
         try:
-            reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, restaurantList[i] + " " + inputs['location'])
+            reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, restaurantList[i] + " " + content[3])
             # Jakob's Code
             restaurant_dict.update(getRestaurantOrder(restaurantList[i], Rating, reviewsSearched, mood))
         except:
