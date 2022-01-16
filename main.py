@@ -36,6 +36,7 @@ def main():
         # Jakob's Code
         restaurant_dict.update(getRestaurantOrder(restaurants, Rating, reviewsSearched, "unique"))
 
+    restaurant_dict = sorted(restaurant_dict.items(), key=lambda x: x[1], reverse=True)
     driver.quit()
     print(restaurant_dict)
 
