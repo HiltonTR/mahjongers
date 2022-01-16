@@ -50,8 +50,9 @@ def getRestaurantOrder(name, google_rating, num_reviews, environment):
     print(amount)
 
     # Doing the calculation
-    calculation = (amount / float(num_reviews)) + ((float(google_rating) + yelp_rating)/2) 
-    restaurantOrder[name] = calculation
+    calculation = (amount / num_reviews) + ((float(google_rating) + yelp_rating)/2) 
+
+    restaurantOrder[name] = round(calculation, 2)
 
     # Close files and return dictionary
     file.close()
