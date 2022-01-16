@@ -59,6 +59,12 @@ body {
     animation: fadeIn 2.5s;
 }
 
+.fade-out {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
