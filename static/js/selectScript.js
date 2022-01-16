@@ -7,6 +7,7 @@ const submitButton = document.getElementById("submit-button");
 submitButton.addEventListener("mousebuttonup", submit);
 
 async function submit() {
+    localStorage.clear();
     var radius = getSliderValue();
     radius = [radius];
     var textInputsArray = getTextInputs();
@@ -24,10 +25,11 @@ async function submit() {
             body: JSON.stringify(formArray) // body data type must match "Content-Type" header
 
         }).then(data => data.json());
-        localStorage.setItem("response", response);
+        localStorage.setItem("response", JSON.stringify(response));
     }
 }
-
+//to be used in rest.... page
+//console.log(JSON.parse(localStorage.getItem("response")))
 
 
 function getSliderValue() {
