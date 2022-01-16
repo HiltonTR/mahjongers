@@ -52,7 +52,7 @@ def main(content):
         driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options = chrome_options)
     for i in range(0, len(restaurantList)):
         try:
-            reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, restaurantList[i] + " " + inputs['location'])
+            reviewsSearched, numberOfReviews, Rating, restaurantImage = extract_google_reviews(driver, restaurantList[i] + " " + inputs['location'])
             # Jakob's Code
             restaurant_dict.update(getRestaurantOrder(restaurantList[i], Rating, reviewsSearched, mood))
         except:

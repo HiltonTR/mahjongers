@@ -21,6 +21,8 @@ def extract_google_reviews(driver, resturauntName):
     Rating = Header.find_element_by_class_name("Aq14fc").get_attribute('innerHTML')
     Link = Header.find_element_by_partial_link_text('Google reviews')
     numberOfReviews = int((Link.text.split()[0]).replace(',', ''))
+    image = Header.find_element_by_class_name("thumb")
+    resturauntImage = image.find_element_by_xpath('a[1]').get_attribute('href')
     Link.click()
 
     allReviews = WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div.gws-localreviews__google-review')))
@@ -49,13 +51,15 @@ def extract_google_reviews(driver, resturauntName):
         text.write("\n")
         
     text.close()
-    return reviewsSearched, numberOfReviews, Rating
+    return reviewsSearched, numberOfReviews, Rating, resturauntImage
 
 def test():
     #chrome_options = Options()
     #chrome_options.add_argument("--headless")
     driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe")
-    reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, 'japonais')
+    reviewsSearched, numberOfReviews, Rating, resturauntImage = extract_google_reviews(driver, 'Izakaya O-Tori')
+    print(resturauntImage)
     driver.quit()
     #print(reviewsSearched, " " , numberOfReviews, " ", Rating)
 
+test()
