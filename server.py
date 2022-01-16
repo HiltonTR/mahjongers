@@ -21,7 +21,7 @@ def restaurants():
     content = request.json
     print(content)
     #process content and return content content should be a dictionary
-    #data = main(content)
+    data = main(content)
     response = jsonify(data) #data
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
