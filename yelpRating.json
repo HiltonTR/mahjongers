@@ -1,0 +1,49 @@
+{
+    "restaurants": [
+        {
+            "name": "The Lingnan",
+            "rating": 4.0,
+            "address": [
+                "10582 104 Street NW",
+                "Edmonton, AB T5H 2W1",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Chili Hot Pot",
+            "rating": 4.5,
+            "address": [
+                "7219 104 St Nw",
+                "Edmonton, AB T6E 4B8",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Sai Woo Garden Restaurant",
+            "rating": 4.0,
+            "address": [
+                "10571 97 St NW",
+                "Edmonton, AB T5H 2L4",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Blue Orchid Chinese Restaurant",
+            "rating": 3.5,
+            "address": [
+                "11235 Jasper Avenue",
+                "Edmonton, AB T5K 0L5",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Chicken King Chinese Restaurant",
+            "rating": 5.0,
+            "address": [
+                "10951 - 101 Street NW",
+                "Edmonton, AB T5H 2S7",
+                "Canada"
+            ]
+        }
+    ]
+}
