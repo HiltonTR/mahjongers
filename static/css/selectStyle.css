@@ -174,7 +174,7 @@ button:hover {
 .results-container {
     display: flex;
     justify-content: space-evenly;
-    width: 90vh;
+    width: 120vh;
     margin-top: 5vh;
 }
 
@@ -186,9 +186,9 @@ button:hover {
     justify-content: center;
     text-align: center;
     align-items: center;
-    width: 15vh;
-    height: 15vh;
-    border-radius: 15vh;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 20vh;
     font-size: 1.75vh;
 }
 
