@@ -2,6 +2,7 @@ import platform
 from getGoogleReviews import extract_google_reviews
 from getYelpInfo import writeToJson
 from getBestResturaunt import getRestaurantOrder
+from collections import OrderedDict
 
 
 import os
@@ -11,18 +12,9 @@ import json
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-inputs = {
-    "term": "Japanese",
-    "location": "Atlanta",
-    "radius": "40000",
-    "available": "true",
-    "limit": "5",
-    "categories": "restaurants, nightlife, food"
-}
-
 def main(content):
-
-    if(len(content) == 5):
+    mood = content[1]
+    if (len(content) == 5):
         inputs = {
             "term": content[2],
             "location": content[4] + ", " + content[3],
@@ -67,9 +59,14 @@ def main(content):
         except:
             pass
 
-    restaurant_dict = sorted(restaurant_dict.items(), key=lambda x: x[1], reverse=True)
+    sort_order = sorted(restaurant_dict.items(), key=lambda x: x[1], reverse=True)
     driver.quit()
-    print(restaurant_dict)
+    ordered_restaurants = {}
+    for i in sort_order:
+        ordered_restaurants[i[0]] = i[1]
+
+    print(ordered_restaurants)
+    return(ordered_restaurants)
 
 
 def getInfo():
