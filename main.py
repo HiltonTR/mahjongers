@@ -10,12 +10,12 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 inputs = {
-    "term": "Japonais",
-    "location": "Edmonton",
+    "term": "Japanese",
+    "location": "Atlanta",
     "radius": "40000",
     "available": "true",
-    "limit": "10",
-    "categories": ""
+    "limit": "5",
+    "categories": "restaurants, nightlife, food"
 }
 
 def main():
@@ -25,23 +25,23 @@ def main():
     # Thomas Code
     writeToJson(inputs, "yelpRating.json")
 
-    restaurantList = getRestaurants()
+    restaurantList, address_list = getInfo()
     # Hilton Code
     chrome_options = Options()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('window-size=1920x1080')
     driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options = chrome_options)
-    for restaurants in restaurantList:
-        reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, restaurants)
+    for i in range(0, len(restaurantList)):
+        reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, restaurantList[i] + " " + inputs['location'])
         # Jakob's Code
-        restaurant_dict.update(getRestaurantOrder(restaurants, Rating, reviewsSearched, "unique"))
+        restaurant_dict.update(getRestaurantOrder(restaurantList[i], Rating, reviewsSearched, "unique"))
 
     restaurant_dict = sorted(restaurant_dict.items(), key=lambda x: x[1], reverse=True)
     driver.quit()
     print(restaurant_dict)
 
 
-def getRestaurants():
+def getInfo():
     restaurant_list = []
     address_list = []
 
@@ -56,11 +56,10 @@ def getRestaurants():
     # list
     for i in data['restaurants']:
         restaurant_list.append(i["name"])
-        address_list.append(i["address"])
+        address_list.append((((i["address"])[-2]).split())[0])
  
     # Closing file
     f.close()
-    
     #print(restaurant_list)
     return restaurant_list, address_list
 
