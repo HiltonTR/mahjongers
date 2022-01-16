@@ -21,8 +21,7 @@ def extract_google_reviews(driver, resturauntName):
     Rating = Header.find_element_by_class_name("Aq14fc").get_attribute('innerHTML')
     Link = Header.find_element_by_partial_link_text('Google reviews')
     numberOfReviews = int((Link.text.split()[0]).replace(',', ''))
-    image = Header.find_element_by_class_name("thumb")
-    resturauntImage = image.find_element_by_xpath('a[1]').get_attribute('href')
+    resturauntImage = Header.find_element_by_xpath('div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]').get_attribute('href')
     Link.click()
 
     allReviews = WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div.gws-localreviews__google-review')))
@@ -62,3 +61,4 @@ def test():
     driver.quit()
     #print(reviewsSearched, " " , numberOfReviews, " ", Rating)
 
+test()
