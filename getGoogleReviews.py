@@ -14,7 +14,7 @@ def extract_google_reviews(driver, resturauntName):
     WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.NAME, 'btnK'))).click()
 
     Header = driver.find_element_by_css_selector('div.kp-header')
-    Rating = Header.find_element_by_xpath('div[2]/div[2]/div[1]/div[1]/span[1]').get_attribute('innerHTML')
+    Rating = Header.find_element_by_class_name("Aq14fc").get_attribute('innerHTML')
     Link = Header.find_element_by_partial_link_text('Google reviews')
     numberOfReviews = int((Link.text.split()[0]).replace(',', ''))
     Link.click()
