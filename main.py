@@ -1,7 +1,9 @@
+import platform
 from getGoogleReviews import extract_google_reviews
 from getYelpInfo import writeToJson
 from getBestResturaunt import getRestaurantOrder
 from collections import OrderedDict
+
 
 import os
 import time
@@ -43,7 +45,11 @@ def main(content):
     chrome_options = Options()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('window-size=1920x1080')
-    driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options = chrome_options)
+    print(platform.system())
+    if (platform.system() == "Darwin"):
+        driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_mac64_m1/chromedriver", options = chrome_options)
+    else:
+        driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options = chrome_options)
     for i in range(0, len(restaurantList)):
         try:
             reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, restaurantList[i] + " " + inputs['location'])

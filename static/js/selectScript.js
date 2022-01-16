@@ -17,7 +17,7 @@ async function submit() {
         body.classList.toggle("fade-out");
         const formArray = radius.concat(textInputsArray);
         // localStorage.setItem("form", formArray)
-        const response = await fetch("http://localhost:5000/form", {
+        const response = await fetch("http://127.0.0.1:5000/form", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -58,10 +58,13 @@ function getTextInputs() {
 function getOptionalInputs() {
     var location = document.getElementById("location-input");
     return location.value;
+}
 
 function displayResults() {
+    console.log("hello");
     clearBody(body);
     // add a title
+    body.style.cssText = "opacity: 1";
     addTitle(body);
     // display the results max 5 could be less
     // add a restaurant
@@ -74,8 +77,7 @@ function clearBody(parent) {
 }
 
 function addTitle(parent) {
-    var title = document.createElement("h1");
+    var title = document.createElement("div");
     title.innerText = "Results";
-    title.classList.add("title");
-    parent.appendChild(title)
+    parent.appendChild(title);
 }
