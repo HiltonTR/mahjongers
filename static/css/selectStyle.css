@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    min-height: 600px
 }
 
 
@@ -77,7 +77,11 @@ body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
+<<<<<<< HEAD
     grid-gap: 100px;
+=======
+    grid-gap: 5vh;
+>>>>>>> functional
 }
 
 .param-container {
@@ -168,3 +172,46 @@ button {
 button:hover {
     transform: scale(1.05)
 }
+
+/* results */
+
+.results-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: auto;
+    margin-top: 5vh;
+}
+
+.restaurant-container {
+    background-color: rgb(194, 227, 190);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: auto;
+    width: 200px;
+    height: 200px; 
+    border-radius: 200px;
+    font-size: 14px;
+    margin: 20px;
+}
+
+.restaurant-container:hover {
+    background-color: rgb(147, 185, 142);
+}
+
+.restaurant-title {
+    max-width: 170px;
+}
+
+.restaurant-rating {
+    color: rgb(254, 241, 144);
+    margin-top: 1vh;
+}
+
+.some-class {
+    text-decoration: none;
+    color: white;
+    }

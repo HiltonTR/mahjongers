@@ -1,6 +1,8 @@
+import platform
 from getGoogleReviews import extract_google_reviews
 from getYelpInfo import writeToJson
 from getBestResturaunt import getRestaurantOrder
+
 
 import os
 import time
@@ -22,6 +24,7 @@ def main(content):
 
     if(len(content) == 5):
         inputs = {
+<<<<<<< HEAD
         "term": content[2],
         "location": content[4],
         "radius": content[0] + "000",
@@ -37,25 +40,56 @@ def main(content):
         "available": "true",
         "limit": "5",
         "categories": "restaurants, nightlife, food"
+=======
+            "term": content[2],
+            "location": content[4] + ", " + content[3],
+            "radius": content[0] + "000",
+            "available": "false",
+            "limit": "5",
+            "categories": "restaurants, nightlife, food"
+        }
+    else:
+        inputs = {
+            "term": content[2],
+            "location": content[3],
+            "radius": content[0] + "000",
+            "available": "false",
+            "limit": "5",
+            "categories": "restaurants, nightlife, food"
+>>>>>>> functional
         }
     
 
     # Creating the dictionary to later sort the restaurants by value
     restaurant_dict = {}
+    #picture_dict = {}
+    #final_dict = {}
 
     # Thomas Code
     writeToJson(inputs, "yelpRating.json")
-
     restaurantList, address_list = getInfo()
     # Hilton Code
     chrome_options = Options()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('window-size=1920x1080')
-    driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options = chrome_options)
+    print(platform.system())
+    if (platform.system() == "Darwin"):
+        driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_mac64_m1/chromedriver", options = chrome_options)
+    else:
+        driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options = chrome_options)
     for i in range(0, len(restaurantList)):
+<<<<<<< HEAD
         reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, restaurantList[i] + " " + inputs['location'])
         # Jakob's Code
         restaurant_dict.update(getRestaurantOrder(restaurantList[i], Rating, reviewsSearched, content[1]))
+=======
+        try:
+            reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, restaurantList[i] + " " + content[3])
+            # Jakob's Code
+            restaurant_dict.update(getRestaurantOrder(restaurantList[i], Rating, reviewsSearched, mood))
+        except:
+            pass
+>>>>>>> functional
 
     restaurant_dict = sorted(restaurant_dict.items(), key=lambda x: x[1], reverse=True)
     driver.quit()
