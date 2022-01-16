@@ -2,7 +2,6 @@ var output = document.getElementById("demo");
 var slider = document.getElementById("radius-slider").oninput = function() {
     output.innerHTML = `${this.value}` + " km";
 };
-
 const body = document.querySelector("body");
 const submitButton = document.getElementById("submit-button");
 submitButton.addEventListener("mousebuttonup", submit);
@@ -25,9 +24,9 @@ async function submit() {
                 // 'Content-Type': 'application/x-www-form-urlencoded',
               },
             body: JSON.stringify(formArray) // body data type must match "Content-Type" header
-
         }).then(data => data.json());
         localStorage.setItem("response", JSON.stringify(response));
+        displayResults();
     }
 }
 //to be used in rest.... page
@@ -59,8 +58,24 @@ function getTextInputs() {
 function getOptionalInputs() {
     var location = document.getElementById("location-input");
     return location.value;
+
+function displayResults() {
+    clearBody(body);
+    // add a title
+    addTitle(body);
+    // display the results max 5 could be less
+    // add a restaurant
 }
 
+function clearBody(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 
-
-
+function addTitle(parent) {
+    var title = document.createElement("h1");
+    title.innerText = "Results";
+    title.classList.add("title");
+    parent.appendChild(title)
+}
