@@ -1,4 +1,4 @@
-# Anywhere App by Mahjongers
+# Anywhere by Mahjongers
 HackED 2022 project
 
 # Inspiration
