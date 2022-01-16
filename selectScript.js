@@ -1,15 +1,7 @@
-function renderParams() {
+var output = document.getElementById("demo");
+var slider = document.getElementById("radius-slider").oninput = function() {
 
-}
+    output.innerHTML = `${this.value}` + " km";
+};
 
-function renderRadius(parentNode) {
-    const container = document.createElement("div");
-    
-    const title = document.createElement("h2");
-    title.innerText = "radius";
-    container.appendChild(title);
 
-    const input = document.createElement("input");
-    input.setAttribute("type", )
-    
-}
