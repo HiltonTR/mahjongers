@@ -16,10 +16,6 @@ def index():
 def select():
     return render_template("select.html")
 
-@app.route("/results")
-def results():
-    return render_template("results.html")
-
 @app.route("/form",  methods=['POST'])
 def restaurants():
     content = request.json
