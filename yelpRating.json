@@ -1,47 +1,47 @@
 {
     "restaurants": [
         {
-            "name": "El Cortez Mexican Kitchen + Tequila Bar",
+            "name": "Ikki Izakaya",
             "rating": 3.5,
             "address": [
-                "8230 Gateway Boulevard",
-                "Edmonton, AB T6E 4B2",
+                "11931 Jasper Avenue",
+                "Edmonton, AB T5K 0P1",
                 "Canada"
             ]
         },
         {
-            "name": "Azucar Taco House",
-            "rating": 3.0,
+            "name": "Chili Hot Pot",
+            "rating": 4.5,
             "address": [
-                "13062-50 Street",
-                "Edmonton, AB T5A 4V9",
+                "7219 104 St Nw",
+                "Edmonton, AB T6E 4B8",
                 "Canada"
             ]
         },
         {
-            "name": "Woodwork",
-            "rating": 4.0,
-            "address": [
-                "10132-100 Street",
-                "Edmonton, AB T5J 0N8",
-                "Canada"
-            ]
-        },
-        {
-            "name": "Have Mercy Food + Booze",
-            "rating": 4.0,
-            "address": [
-                "8232 Gateway Boulevard NW",
-                "Edmonton, AB T6E 4B2",
-                "Canada"
-            ]
-        },
-        {
-            "name": "CRAFT Beer Market",
+            "name": "Maki Maki",
             "rating": 3.5,
             "address": [
-                "10013 101A Avenue",
-                "Edmonton, AB T5J 0C3",
+                "8109-101 Street NW",
+                "Edmonton, AB T6E 3Y9",
+                "Canada"
+            ]
+        },
+        {
+            "name": "It' Dog",
+            "rating": 3.5,
+            "address": [
+                "8621 109th Street NW",
+                "Edmonton, AB T6G 1E7",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Soju Korean Restaurant & Karaoke Bar",
+            "rating": 3.5,
+            "address": [
+                "9110 51 Avenue NW",
+                "Edmonton, AB T6E 5L8",
                 "Canada"
             ]
         }
