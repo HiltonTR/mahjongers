@@ -22,7 +22,7 @@ def restaurants():
     print(content)
     #process content and return content content should be a dictionary
     #data = main(content)
-    response = jsonify({"a":1}) #data
+    response = jsonify(data) #data
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
