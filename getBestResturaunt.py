@@ -37,9 +37,10 @@ def getRestaurantOrder(name, google_rating, num_reviews):
     # Grabbing data from JSON files
     google_rating = google_rating
 
+    yelp_rating = 0
     for j in data["restaurants"]:
         if name == j["name"]:
-            yelp_rating = int(j["rating"])
+            yelp_rating = float(j["rating"])
 
     # Counting the amount of times the synonyms appear in the reviews
     amount = 0
@@ -49,7 +50,7 @@ def getRestaurantOrder(name, google_rating, num_reviews):
     print(amount)
 
     # Doing the calculation
-    calculation = (amount / num_reviews) + ((google_rating + yelp_rating)/2) 
+    calculation = (amount / float(num_reviews)) + ((float(google_rating) + yelp_rating)/2) 
     restaurantOrder[name] = calculation
 
     # Close files and return dictionary
