@@ -53,6 +53,5 @@ def test():
     driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe")
     reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, 'japonais')
     driver.quit()
-    print(reviewsSearched, " " , numberOfReviews, " ", Rating)
+    #print(reviewsSearched, " " , numberOfReviews, " ", Rating)
 
-test()
