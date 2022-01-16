@@ -7,9 +7,10 @@ import time
 import json
 
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 inputs = {
-    "term": "Japo",
+    "term": "Japonais",
     "location": "Edmonton",
     "radius": "40000",
     "available": "true",
@@ -19,20 +20,19 @@ inputs = {
 
 def main():
     writeToJson(inputs, "yelpRating.json")
-
-    driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe")
-    reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, 'japonais')
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('window-size=1920x1080')
+    driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options = chrome_options)
+    reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, 'skyview the keg')
     driver.quit()    
     
     
     print(reviewsSearched)
     print(numberOfReviews)
     print(Rating)
-
     getRestaurantOrder("Japonais", Rating, reviewsSearched)
 
-
-#main()
 
 def getRestaurants():
     restaurant_list = []
@@ -54,4 +54,5 @@ def getRestaurants():
     
     #print(restaurant_list)
     return restaurant_list
-getRestaurants()
+
+main()
