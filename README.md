@@ -5,6 +5,7 @@ HackED 2022 project
 Where do you wanna eat? Anywhere.
 Ok but like WHERE though???
 The Anywhere App will help users to find local restaurants that they will enjoy!
+During covid we had a lot of take out and determining where to eat was a pain because we're all indecisive!
 
 # What it does
 Recommend Restaurants based on the user's mood and location
