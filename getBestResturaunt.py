@@ -24,9 +24,9 @@ def getRestaurantOrder(name, google_rating, num_reviews):
     data = json.load(file)
 
     # Open text file
-    text_file = open("review.txt", "r")
+    text_file = open("review.txt", "r" , encoding='utf-8')
  
-    #R ead whole file to a string and then convert to a list
+    # Read whole file to a string and then convert to a list
     dataReview = text_file.read()
     dataReview = re.sub('[^A-Za-z0-9\s]+', '', dataReview)
     result = dataReview.split()
@@ -60,6 +60,7 @@ def getRestaurantOrder(name, google_rating, num_reviews):
     return restaurantOrder
 
 def main():
+    # Test function
     getRestaurantOrder("Japonais", 5, 100)
 
 if __name__ == "__main__":
