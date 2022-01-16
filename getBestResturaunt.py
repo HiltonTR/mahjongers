@@ -12,10 +12,10 @@ def synonyms(term):
     return [span.text for span in soup.findAll('a', {'class': 'css-1kg1yv8 eh475bn0'})] # 'css-1gyuw4i eh475bn0' for less relevant synonyms
 
 # Returns a dictionary of restaurants in order of value
-def getRestaurantOrder(name, google_rating, num_reviews):
+def getRestaurantOrder(name, google_rating, num_reviews, environment):
     # Grabs an array of synonyms for given word
     # TODO CHANGE THE WORD TO THE INPUT FROM GULLEY
-    word = "unique".lower()
+    word = environment.lower()
     array1 = synonyms(word).copy()
     print(array1)
 
