@@ -15,7 +15,7 @@ async function submit() {
     if (textInputsArray.length < 3) {
         alert("Please fill in the required (*) fields!");
     } else {
-        body.classList.toggle("fade-out")
+        body.classList.toggle("fade-out");
         const formArray = radius.concat(textInputsArray);
         // localStorage.setItem("form", formArray)
         const response = await fetch("http://localhost:5000/form", {
@@ -27,13 +27,8 @@ async function submit() {
             body: JSON.stringify(formArray) // body data type must match "Content-Type" header
 
         }).then(data => data.json());
-<<<<<<< Updated upstream
         localStorage.setItem("response", JSON.stringify(response));
-        
-=======
-        localStorage.setItem("response", response);
-        window.location.href = "/restaurants";
->>>>>>> Stashed changes
+        window.location.href = '/results.html'
     }
 }
 //to be used in rest.... page
