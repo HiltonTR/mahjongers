@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    min-height: 600px
 }
 
 
@@ -174,7 +174,8 @@ button:hover {
 .results-container {
     display: flex;
     justify-content: space-evenly;
-    width: 120vh;
+    width: 90vh;
+    height: auto;
     margin-top: 5vh;
 }
 
@@ -186,10 +187,10 @@ button:hover {
     justify-content: center;
     text-align: center;
     align-items: center;
-    width: 20vh;
-    height: 20vh;
+    width: 15vh;
+    height: 15vh;
     border-radius: 20vh;
-    font-size: 1.75vh;
+    font-size: 1.5rem;
 }
 
 .restaurant-container:hover {
