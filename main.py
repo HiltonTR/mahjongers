@@ -37,7 +37,7 @@ def main():
     print(reviewsSearched)
     print(numberOfReviews)
     print(Rating)
-    restaurant_dict.update(getRestaurantOrder("Japonais Bistro", Rating, reviewsSearched))
+    restaurant_dict.update(getRestaurantOrder("Japonais Bistro", Rating, reviewsSearched, "unique"))
 
 
 def getRestaurants():
