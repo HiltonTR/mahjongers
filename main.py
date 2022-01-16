@@ -43,6 +43,7 @@ def main():
 
 def getRestaurants():
     restaurant_list = []
+    address_list = []
 
     # Opening JSON file
     f = open('yelpRating.json')
@@ -55,11 +56,12 @@ def getRestaurants():
     # list
     for i in data['restaurants']:
         restaurant_list.append(i["name"])
+        address_list.append(i["address"])
  
     # Closing file
     f.close()
     
     #print(restaurant_list)
-    return restaurant_list
+    return restaurant_list, address_list
 
 main()
