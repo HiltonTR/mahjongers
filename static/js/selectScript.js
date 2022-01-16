@@ -15,7 +15,7 @@ async function submit() {
     if (textInputsArray.length < 3) {
         alert("Please fill in the required (*) fields!");
     } else {
-        window.location.href = "/results.html";
+        // window.location.href = "/results.html";
         body.classList.toggle("fade-out");
         const formArray = radius.concat(textInputsArray);
         // localStorage.setItem("form", formArray)
@@ -29,8 +29,6 @@ async function submit() {
 
         }).then(data => data.json());
         localStorage.setItem("response", JSON.stringify(response));
-        console.log("hello");
-        window.location.href = "/results.html";
     }
 }
 
