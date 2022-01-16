@@ -28,9 +28,10 @@ async function submit() {
 
         }).then(data => data.json());
         localStorage.setItem("response", JSON.stringify(response));
-        window.location.href = '/results.html'
     }
 }
+
+//window.location.href = '/results.html'
 //to be used in rest.... page
 //console.log(JSON.parse(localStorage.getItem("response")))
 
