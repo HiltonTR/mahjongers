@@ -20,8 +20,8 @@ def extract_google_reviews(driver, resturauntName):
     Link.click()
 
     allReviews = WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div.gws-localreviews__google-review')))
-    if(numberOfReviews > 100):
-        totalReviews = 100
+    if(numberOfReviews > 50):
+        totalReviews = 50
     else:
         totalReviews = numberOfReviews
 
@@ -53,6 +53,5 @@ def test():
     driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe")
     reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, 'japonais')
     driver.quit()
-    print(reviewsSearched, " " , numberOfReviews, " ", Rating)
+    #print(reviewsSearched, " " , numberOfReviews, " ", Rating)
 
-test()
