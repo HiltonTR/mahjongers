@@ -50,7 +50,7 @@ def extract_google_reviews(driver, resturauntName):
 def test():
     #chrome_options = Options()
     #chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options=chrome_options)
+    driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe")
     reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, 'japonais')
     driver.quit()
     print(reviewsSearched, " " , numberOfReviews, " ", Rating)
