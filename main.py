@@ -25,19 +25,19 @@ def main():
     # Thomas Code
     writeToJson(inputs, "yelpRating.json")
 
+    restaurantList = getRestaurants()
     # Hilton Code
     chrome_options = Options()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('window-size=1920x1080')
     driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options = chrome_options)
-    reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, 'skyview the keg')
-    driver.quit()    
-    
-    # Jakob's Code
-    print(reviewsSearched)
-    print(numberOfReviews)
-    print(Rating)
-    restaurant_dict.update(getRestaurantOrder("Japonais Bistro", Rating, reviewsSearched, "unique"))
+    for restaurants in restaurantList:
+        reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, restaurants)
+        # Jakob's Code
+        restaurant_dict.update(getRestaurantOrder(restaurants, Rating, reviewsSearched, "unique"))
+
+    driver.quit()
+    print(restaurant_dict)
 
 
 def getRestaurants():

@@ -1,93 +1,94 @@
 {
     "restaurants": [
         {
-            "name": "The Cavern",
-            "rating": 4.5,
-            "address": [
-                "10169 104 Street NW",
-                "Suite 2",
-                "Edmonton, AB T5J 1A9",
-                "Canada"
-            ]
-        },
-        {
-            "name": "Woodwork",
+            "name": "Japonais Bistro",
             "rating": 4.0,
             "address": [
-                "10132-100 Street",
-                "Edmonton, AB T5J 0N8",
+                "11806 Jasper Avenue",
+                "Edmonton, AB T5K 0C1",
                 "Canada"
             ]
         },
         {
-            "name": "The Bothy Wine & Whisky Bar",
+            "name": "Moonga Sashimi",
+            "rating": 5.0,
+            "address": [
+                "10903 23 Avenue NW",
+                "SUite 109B",
+                "Edmonton, AB T6J 1X3",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Izakaya Tomo",
             "rating": 4.5,
             "address": [
-                "5482 Calgary Trail",
-                "Edmonton, AB T6H 4J8",
+                "3739 99 Street",
+                "Edmonton, AB T6E 6J7",
                 "Canada"
             ]
         },
         {
-            "name": "Tzin Wine & Tapas",
-            "rating": 4.5,
+            "name": "Washoku Bistro",
+            "rating": 4.0,
             "address": [
-                "10115 104 Street Northwest",
-                "Edmonton, AB T5J 0Z9",
+                "10702 124 Street NW",
+                "Edmonton, AB T5M 0H1",
                 "Canada"
             ]
         },
         {
-            "name": "Partake",
-            "rating": 4.5,
+            "name": "Ichiban Restaurant Japanese Cuisine",
+            "rating": 4.0,
             "address": [
-                "12431 102 Ave",
-                "Edmonton, AB T5N 0M2",
+                "8750 149 Street NW",
+                "Edmonton, AB T5R 1B6",
                 "Canada"
             ]
         },
         {
-            "name": "Three Vikings",
-            "rating": 4.5,
+            "name": "Sushi Wasabi",
+            "rating": 4.0,
             "address": [
-                "10713 124 Street",
-                "Edmonton, AB T5M 0H2",
+                "5714 111 Street NW",
+                "Edmonton, AB T6H 3G1",
                 "Canada"
             ]
         },
         {
-            "name": "Clementine",
+            "name": "Shojo Izakaya",
+            "rating": 4.0,
+            "address": [
+                "10425 121 Street NW",
+                "Edmonton, AB T5N 1L2",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Dorinku Tokyo",
+            "rating": 4.0,
+            "address": [
+                "10205 82 Avenue NW",
+                "Edmonton, AB T6E 3X8",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Sumo Sumo Sushi Bar & Grill",
             "rating": 3.5,
             "address": [
-                "11957 Jasper Avenue",
-                "Edmonton, AB T5K 0P1",
+                "220 Lakeland Drive",
+                "Suite 300",
+                "Sherwood Park, AB T8H 0N6",
                 "Canada"
             ]
         },
         {
-            "name": "One Four Two Bistro & Bar",
-            "rating": 5.0,
+            "name": "Watari",
+            "rating": 3.0,
             "address": [
-                "9682 142 St NW",
-                "Edmonton, AB T5N 4B2",
-                "Canada"
-            ]
-        },
-        {
-            "name": "The Common",
-            "rating": 4.0,
-            "address": [
-                "9910 109th Street",
-                "Edmonton, AB T5K 1H5",
-                "Canada"
-            ]
-        },
-        {
-            "name": "SoDo on Jasper",
-            "rating": 5.0,
-            "address": [
-                "11011 Jasper Avenue",
-                "Edmonton, AB T5K 0K6",
+                "10108 124 Street",
+                "Edmonton, AB T5N 1P6",
                 "Canada"
             ]
         }
