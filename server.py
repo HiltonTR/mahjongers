@@ -1,4 +1,4 @@
-from main import main
+# from main import main
 from flask import Flask
 from flask import render_template, jsonify, request
 from flask_cors import CORS
@@ -25,5 +25,8 @@ def restaurants():
     response = jsonify({"a":1}) #data
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
+
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
 
