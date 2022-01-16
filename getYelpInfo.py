@@ -3,7 +3,7 @@ from sre_parse import CATEGORIES
 from unicodedata import category
 import requests
 import json
-import enum
+from spellchecker import SpellChecker
 # ------------------------ NECESSARY INFO TO USE YELP API ----------------------------------------
 api_key = '9BqKWX1mOXXiQqomscePk5OUJ4YhoI2BS-cNLAkQq63KTLoONoPxyvJ9YCDlCHRoskLeUSn70s4gCIrwrL6T3TgBiSo4o-bwqBFBcMmzUS3-tarHNs6Bhw8mWHziYXYx'
 headers = {'Authorization': 'Bearer %s' % api_key}
@@ -15,26 +15,46 @@ url = 'https://api.yelp.com/v3/businesses/search'
 # ----------------------------------------------------------------------------------------------------
 
 # --------PARAMS AREAS--------
-term = 'Cozy Bar';
-location = 'Edmonton';
-radius = '40000';
-available = 'true';
-limit = '10';
-categories = '';
+inputs = {
+    "term": "Japo",
+    "location": "Edmonton",
+    "radius": "40000",
+    "available": "true",
+    "limit": "10",
+    "categories": ""
+}
 # -----------------------------
 
-def getRestaurants():
-    params = {'term': term,'location': location, 'radius': radius, 'open_now': available, 'limit': limit} #if city is just searched take out radius term and add open_now = true 
+def inputSpellCheck(inputs):
+    spell = SpellChecker();
+    for key, value in inputs.items():
+        correctedWord = ""
+        # only correct non-empty string
+        if value:
+            for word in value.split():
+                correctedWord += spell.correction(word) + " ";
+            inputs[key] = correctedWord.strip();
+    print(inputs)
+    
+
+def getRestaurants(inputs):
+    params = {
+        'term': inputs["term"], 
+        'location': inputs["location"], 
+        'radius': inputs["radius"], 
+        'open_now': inputs["available"], 
+        'limit': inputs["limit"], 
+        'categories': inputs["categories"]
+        } #if city is just searched take out radius term and add open_now = true 
     req = requests.get(url, params=params, headers=headers)
     parsedInfo = json.loads(req.text)
     restaurants = parsedInfo["businesses"]
     return restaurants
 
-
 # create json file containing place name, rating and address
-def writeToJson(filename = "yelpRating.json"):
-    restaurants = getRestaurants()
-    print(restaurants)
+def writeToJson(inputs, filename):
+    restaurants = getRestaurants(inputs)
+    # print(restaurants)
     jsonObj = {}
     jsonObj['restaurants'] = []
     with open(filename, "w") as file:
@@ -48,4 +68,5 @@ def writeToJson(filename = "yelpRating.json"):
 
         json.dump(jsonObj, file, indent = 4)
 
-writeToJson();
+inputSpellCheck(inputs)
+writeToJson(inputs, "yelpRating.json")
