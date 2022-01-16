@@ -58,6 +58,7 @@ def getRestaurantOrder(name, google_rating, num_reviews, environment):
     text_file.close()
 
     print(restaurantOrder)
+    
     return restaurantOrder
 
 def main():

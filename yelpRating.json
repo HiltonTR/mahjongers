@@ -1,47 +1,48 @@
 {
     "restaurants": [
         {
-            "name": "Ok Yaki",
-            "rating": 4.5,
-            "address": [
-                "714 Moreland Ave SE",
-                "Ste D",
-                "Atlanta, GA 30316"
-            ]
-        },
-        {
-            "name": "Himitsu",
+            "name": "El Cortez Mexican Kitchen + Tequila Bar",
             "rating": 3.5,
             "address": [
-                "3050 Peachtree Rd NW",
-                "Atlanta, GA 30305"
+                "8230 Gateway Boulevard",
+                "Edmonton, AB T6E 4B2",
+                "Canada"
             ]
         },
         {
-            "name": "Bangkok Bold Thai Asian Fusion Kitchen",
-            "rating": 4.0,
-            "address": [
-                "800 Forrest St NW",
-                "K35",
-                "Atlanta, GA 30318"
-            ]
-        },
-        {
-            "name": "Todahmgol",
-            "rating": 3.5,
-            "address": [
-                "2442 Pleasant Hill Rd",
-                "Ste 3B",
-                "Duluth, GA 30096"
-            ]
-        },
-        {
-            "name": "RA Sushi Bar Restaurant",
+            "name": "Azucar Taco House",
             "rating": 3.0,
             "address": [
-                "1080 Peachtree St NE",
-                "Ste 8",
-                "Atlanta, GA 30309"
+                "13062-50 Street",
+                "Edmonton, AB T5A 4V9",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Woodwork",
+            "rating": 4.0,
+            "address": [
+                "10132-100 Street",
+                "Edmonton, AB T5J 0N8",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Have Mercy Food + Booze",
+            "rating": 4.0,
+            "address": [
+                "8232 Gateway Boulevard NW",
+                "Edmonton, AB T6E 4B2",
+                "Canada"
+            ]
+        },
+        {
+            "name": "CRAFT Beer Market",
+            "rating": 3.5,
+            "address": [
+                "10013 101A Avenue",
+                "Edmonton, AB T5J 0C3",
+                "Canada"
             ]
         }
     ]
