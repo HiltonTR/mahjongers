@@ -6,7 +6,7 @@ var slider = document.getElementById("radius-slider").oninput = function() {
 const submitButton = document.getElementById("submit-button");
 submitButton.addEventListener("mousebuttonup", submit);
 
-function submit() {
+async function submit() {
     var radius = getSliderValue();
     radius = [radius];
     var textInputsArray = getTextInputs();
@@ -14,9 +14,21 @@ function submit() {
         alert("Please fill in the required (*) fields!");
     } else {
         const formArray = radius.concat(textInputsArray);
-        localStorage.setItem("form", formArray)
+        // localStorage.setItem("form", formArray)
+        const response = await fetch("http://localhost:5000/form", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+              },
+            body: JSON.stringify(formArray) // body data type must match "Content-Type" header
+
+        }).then(data => data.json());
+        localStorage.setItem("response", response);
     }
 }
+
+
 
 function getSliderValue() {
     var slider = document.getElementById("radius-slider");
