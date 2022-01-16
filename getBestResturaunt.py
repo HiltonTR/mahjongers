@@ -17,7 +17,6 @@ def getRestaurantOrder(name, google_rating, num_reviews, environment):
     # TODO CHANGE THE WORD TO THE INPUT FROM GULLEY
     word = environment.lower()
     array1 = synonyms(word).copy()
-    print(array1)
 
     # JSON file for yelp reviews for each restaurant
     file = open("yelpRating.json")
@@ -47,7 +46,6 @@ def getRestaurantOrder(name, google_rating, num_reviews, environment):
     for x in array1:
         amount += result.count(x[:-1])
     amount += result.count(word)
-    print(amount)
 
     # Doing the calculation
     calculation = (amount / num_reviews) + ((float(google_rating) + yelp_rating)/2) 
