@@ -114,10 +114,20 @@ function addResults(parentNode, anObject) {
         var rating = document.createElement("p");
         rating.innerText = getRatingString(ratingValue);
         rating.classList.add("restaurant-rating");
-    
+        
+        var goText = document.createElement('span');
+        goText.classList.add("some-class")
+        goText.appendChild(document.createTextNode("Go!"));
+
+        var a = document.createElement('a');
+        a.appendChild(goText);
+        a.title = titleText;
+        a.href = "http://www.google.com/search?q=" + titleText;
+
 
         restaurantContainer.appendChild(title);
         restaurantContainer.appendChild(rating);
+        restaurantContainer.appendChild(a);
 
         resultsContainer.appendChild(restaurantContainer);
       }

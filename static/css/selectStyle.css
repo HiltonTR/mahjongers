@@ -206,3 +206,8 @@ button:hover {
     color: rgb(254, 241, 144);
     margin-top: 1vh;
 }
+
+.some-class {
+    text-decoration: none;
+    color: white;
+    }
