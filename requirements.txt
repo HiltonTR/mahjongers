@@ -1,0 +1,7 @@
+requests
+selenium
+bs4
+pyspellchecker
+spellchecker
+lxml
+flask-cors
