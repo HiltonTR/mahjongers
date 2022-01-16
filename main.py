@@ -36,6 +36,8 @@ def main(content):
 
     # Creating the dictionary to later sort the restaurants by value
     restaurant_dict = {}
+    picture_dict = {}
+    final_dict = {}
 
     # Thomas Code
     writeToJson(inputs, "yelpRating.json")
@@ -43,7 +45,7 @@ def main(content):
     restaurantList, address_list = getInfo()
     # Hilton Code
     chrome_options = Options()
-    chrome_options.add_argument('--headless')
+    #chrome_options.add_argument('--headless')
     chrome_options.add_argument('window-size=1920x1080')
     print(platform.system())
     if (platform.system() == "Darwin"):
@@ -55,6 +57,7 @@ def main(content):
             reviewsSearched, numberOfReviews, Rating, restaurantImage = extract_google_reviews(driver, restaurantList[i] + " " + inputs['location'])
             # Jakob's Code
             restaurant_dict.update(getRestaurantOrder(restaurantList[i], Rating, reviewsSearched, mood))
+            picture_dict[restaurantList[i]] = restaurantImage
         except:
             pass
 
@@ -64,8 +67,11 @@ def main(content):
     for i in sort_order:
         ordered_restaurants[i[0]] = i[1]
 
-    print(ordered_restaurants)
-    return(ordered_restaurants)
+    for key in ordered_restaurants:
+        final_dict[key] = [ordered_restaurants[key], picture_dict[key]]
+
+    print(final_dict)
+    return(final_dict)
 
 
 def getInfo():
