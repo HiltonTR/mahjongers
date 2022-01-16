@@ -168,3 +168,26 @@ button {
 button:hover {
     transform: scale(1.05)
 }
+
+/* results */
+
+.results-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90vh;
+    margin-top: 5vh;
+}
+
+.restaurant-container {
+    background-color: rgb(147, 185, 142);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 15vh;
+    font-size: 1.75vh;
+}

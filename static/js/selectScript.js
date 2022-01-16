@@ -7,7 +7,7 @@ const body = document.querySelector("body");
 const submitButton = document.getElementById("submit-button");
 submitButton.addEventListener("mousebuttonup", submit);
 
-let responseString;
+let responseObject;
 
 async function submit() {
     localStorage.clear();
@@ -29,9 +29,8 @@ async function submit() {
             body: JSON.stringify(formArray) // body data type must match "Content-Type" header
         }).then(data => data.json());
         localStorage.setItem("response", JSON.stringify(response));
-        responseString = JSON.parse(localStorage.getItem("response"));
-        alert(JSON.parse(localStorage.getItem("response")));
-        displayResults(responseString);
+        responseObject = JSON.parse(localStorage.getItem("response"));
+        displayResults(responseObject);
     }
 }
 //to be used in rest.... page
@@ -67,15 +66,12 @@ function getOptionalInputs() {
 
 function displayResults(response) {
     body.classList.toggle("fade-in");
-    console.log("clearing the webpage...");
     clearBody(body);
     body.classList.toggle("fade-out");
     // add a title
-    console.log("Adding a title")
     addTitle(body)
-    console.log("finished adding a title")
     // display the results max 5 could be less
-    addResult(body);
+    addResults(body, response);
 
     // add a restaurant
 
@@ -95,6 +91,31 @@ function addTitle(parent) {
     parent.appendChild(title);
 }
 
-function addResult(parent) {
+function addResults(parentNode, anObject) {
     var resultsContainer = document.createElement("div");
+    resultsContainer.classList.add("results-container")
+    
+    var response = anObject;
+
+    for (const property in response) {
+        var titleText = property;
+        var ratingText = response[property];
+        
+        var restaurantContainer = document.createElement("div");
+        restaurantContainer.classList.add("restaurant-container");
+        restaurantContainer.classList.toggle("fade-in");
+
+        var title = document.createElement("h2");
+        title.classList.add("restaurant-title")
+        title.innerText = titleText;
+        
+        var rating = document.createElement("p");
+        rating.innerText = `Rating: ${ratingText} stars`;
+
+        restaurantContainer.appendChild(title);
+        restaurantContainer.appendChild(rating);
+
+        resultsContainer.appendChild(restaurantContainer);
+      }
+    parentNode.appendChild(resultsContainer);
 }
