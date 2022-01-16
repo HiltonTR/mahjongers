@@ -4,6 +4,7 @@ from getBestResturaunt import getRestaurantOrder
 
 import os
 import time
+import json
 
 from selenium import webdriver
 
@@ -31,4 +32,26 @@ def main():
     getRestaurantOrder("Japonais", Rating, reviewsSearched)
 
 
-main()
+#main()
+
+def getRestaurants():
+    restaurant_list = []
+
+    # Opening JSON file
+    f = open('yelpRating.json')
+ 
+    # returns JSON object as
+    # a dictionary
+    data = json.load(f)
+ 
+    # Iterating through the json
+    # list
+    for i in data['restaurants']:
+        restaurant_list.append(i["name"])
+ 
+    # Closing file
+    f.close()
+    
+    #print(restaurant_list)
+    return restaurant_list
+getRestaurants()
