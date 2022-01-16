@@ -48,7 +48,7 @@ def getRestaurantOrder(name, google_rating, num_reviews, environment):
     amount += result.count(word)
 
     # Doing the calculation
-    calculation = (amount / num_reviews) + ((float(google_rating) + yelp_rating)/2) 
+    calculation = (5*(amount / num_reviews)) + ((float(google_rating) + yelp_rating)/2) 
 
     restaurantOrder[name] = round(calculation, 2)
 
