@@ -16,12 +16,12 @@ url = 'https://api.yelp.com/v3/businesses/search'
 
 # --------PARAMS AREAS--------
 inputs = {
-    "term": "Japo",
+    "term": "Japanese",
     "location": "Edmonton",
     "radius": "40000",
     "available": "true",
-    "limit": "10",
-    "categories": ""
+    "limit": "11",
+    "categories": "restaurants, nightlife, food"
 }
 # -----------------------------
 
@@ -68,5 +68,5 @@ def writeToJson(inputs, filename):
 
         json.dump(jsonObj, file, indent = 4)
 
-inputSpellCheck(inputs)
-writeToJson(inputs, "yelpRating.json")
+# inputSpellCheck(inputs)
+# writeToJson(inputs, "yelpRating.json")
