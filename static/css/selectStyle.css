@@ -102,9 +102,12 @@ body {
     background: rgb(249, 247, 242);
 }
 
+span {
+    font-size: 2vh;
+}
+
 #radius-slider {
     width: 15vh;
-    
 }
 
 #radius {
