@@ -19,7 +19,13 @@ inputs = {
 }
 
 def main():
+    # Creating the dictionary to later sort the restaurants by value
+    restaurant_dict = {}
+
+    # Thomas Code
     writeToJson(inputs, "yelpRating.json")
+
+    # Hilton Code
     chrome_options = Options()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('window-size=1920x1080')
@@ -27,11 +33,11 @@ def main():
     reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, 'skyview the keg')
     driver.quit()    
     
-    
+    # Jakob's Code
     print(reviewsSearched)
     print(numberOfReviews)
     print(Rating)
-    getRestaurantOrder("Japonais", Rating, reviewsSearched)
+    restaurant_dict.update(getRestaurantOrder("Japonais Bistro", Rating, reviewsSearched))
 
 
 def getRestaurants():
