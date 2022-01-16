@@ -77,7 +77,11 @@ body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
+<<<<<<< Updated upstream
     grid-gap: 100px;
+=======
+    grid-row-gap: 200px;
+>>>>>>> Stashed changes
 }
 
 .param-container {

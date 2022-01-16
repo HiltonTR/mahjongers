@@ -27,8 +27,13 @@ async function submit() {
             body: JSON.stringify(formArray) // body data type must match "Content-Type" header
 
         }).then(data => data.json());
+<<<<<<< Updated upstream
         localStorage.setItem("response", JSON.stringify(response));
         
+=======
+        localStorage.setItem("response", response);
+        window.location.href = "/restaurants";
+>>>>>>> Stashed changes
     }
 }
 //to be used in rest.... page
