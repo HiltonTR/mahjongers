@@ -99,7 +99,9 @@ function addResults(parentNode, anObject) {
 
     for (const property in response) {
         var titleText = property;
-        var ratingText = response[property];
+        var ratingValue = response[property];
+        console.log(ratingValue);
+        console.log(typeof ratingValue);
         
         var restaurantContainer = document.createElement("div");
         restaurantContainer.classList.add("restaurant-container");
@@ -108,9 +110,11 @@ function addResults(parentNode, anObject) {
         var title = document.createElement("h2");
         title.classList.add("restaurant-title")
         title.innerText = titleText;
-        
+
         var rating = document.createElement("p");
-        rating.innerText = `Rating: ${ratingText} stars`;
+        rating.innerText = getRatingString(ratingValue);
+        rating.classList.add("restaurant-rating");
+    
 
         restaurantContainer.appendChild(title);
         restaurantContainer.appendChild(rating);
@@ -118,4 +122,17 @@ function addResults(parentNode, anObject) {
         resultsContainer.appendChild(restaurantContainer);
       }
     parentNode.appendChild(resultsContainer);
+}
+
+function getRatingString(floatRating) {
+    const filledStars = Math.round((floatRating/6)*10);  // scale the biased reviews
+    const emptyStars = 10 - filledStars;
+
+    // const filledCharCode = "\u2605";
+    // const emptyCharCode = "\u2606";
+
+    const filledStarsString = '\u2605'.repeat(filledStars);
+    const emptyStarsString = '\u2606'.repeat(emptyStars);
+
+    return filledStarsString + emptyStarsString;
 }

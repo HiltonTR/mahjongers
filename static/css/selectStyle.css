@@ -179,7 +179,7 @@ button:hover {
 }
 
 .restaurant-container {
-    background-color: rgb(147, 185, 142);
+    background-color: rgb(194, 227, 190);
     color: white;
     display: flex;
     flex-direction: column;
@@ -190,4 +190,14 @@ button:hover {
     height: 15vh;
     border-radius: 15vh;
     font-size: 1.75vh;
+}
+
+.restaurant-container:hover {
+    background-color: rgb(147, 185, 142);
+}
+
+.restaurant-rating {
+    color: rgb(254, 241, 144);
+    margin-top: 1vh;
+    font-size: larger;
 }
