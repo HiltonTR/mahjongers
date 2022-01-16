@@ -3,6 +3,7 @@ var slider = document.getElementById("radius-slider").oninput = function() {
     output.innerHTML = `${this.value}` + " km";
 };
 
+const body = document.querySelector("body");
 const submitButton = document.getElementById("submit-button");
 submitButton.addEventListener("mousebuttonup", submit);
 
@@ -14,6 +15,7 @@ async function submit() {
     if (textInputsArray.length < 3) {
         alert("Please fill in the required (*) fields!");
     } else {
+        body.classList.toggle("fade-out");
         const formArray = radius.concat(textInputsArray);
         // localStorage.setItem("form", formArray)
         const response = await fetch("http://localhost:5000/form", {
