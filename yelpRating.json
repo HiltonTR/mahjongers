@@ -1,0 +1,95 @@
+{
+    "restaurants": [
+        {
+            "name": "The Cavern",
+            "rating": 4.5,
+            "address": [
+                "10169 104 Street NW",
+                "Suite 2",
+                "Edmonton, AB T5J 1A9",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Woodwork",
+            "rating": 4.0,
+            "address": [
+                "10132-100 Street",
+                "Edmonton, AB T5J 0N8",
+                "Canada"
+            ]
+        },
+        {
+            "name": "The Bothy Wine & Whisky Bar",
+            "rating": 4.5,
+            "address": [
+                "5482 Calgary Trail",
+                "Edmonton, AB T6H 4J8",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Tzin Wine & Tapas",
+            "rating": 4.5,
+            "address": [
+                "10115 104 Street Northwest",
+                "Edmonton, AB T5J 0Z9",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Partake",
+            "rating": 4.5,
+            "address": [
+                "12431 102 Ave",
+                "Edmonton, AB T5N 0M2",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Three Vikings",
+            "rating": 4.5,
+            "address": [
+                "10713 124 Street",
+                "Edmonton, AB T5M 0H2",
+                "Canada"
+            ]
+        },
+        {
+            "name": "Clementine",
+            "rating": 3.5,
+            "address": [
+                "11957 Jasper Avenue",
+                "Edmonton, AB T5K 0P1",
+                "Canada"
+            ]
+        },
+        {
+            "name": "One Four Two Bistro & Bar",
+            "rating": 5.0,
+            "address": [
+                "9682 142 St NW",
+                "Edmonton, AB T5N 4B2",
+                "Canada"
+            ]
+        },
+        {
+            "name": "The Common",
+            "rating": 4.0,
+            "address": [
+                "9910 109th Street",
+                "Edmonton, AB T5K 1H5",
+                "Canada"
+            ]
+        },
+        {
+            "name": "SoDo on Jasper",
+            "rating": 5.0,
+            "address": [
+                "11011 Jasper Avenue",
+                "Edmonton, AB T5K 0K6",
+                "Canada"
+            ]
+        }
+    ]
+}
