@@ -62,5 +62,3 @@ def getInfo():
     f.close()
     #print(restaurant_list)
     return restaurant_list, address_list
-
-main()
