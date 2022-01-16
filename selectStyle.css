@@ -69,7 +69,7 @@ body {
     justify-self: center;
     color: rgb(128, 106, 89);
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
 }
 
@@ -143,4 +143,19 @@ body {
 .slider::-moz-range-thumb {
     background: rgb(147, 185, 142);
 
+}
+
+button {
+    background-color: rgb(147, 185, 142);
+    color: white;
+    font-weight: 600;
+    font-size: 4vh;
+    padding: 1vh 2.5vh 1vh 2.5vh;
+    margin-top: 7vh;
+    border-radius: 2.5vh;
+    border: none;
+}
+
+button:hover {
+    transform: scale(1.05)
 }
