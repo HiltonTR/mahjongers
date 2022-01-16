@@ -19,7 +19,7 @@ def main(content):
             "term": content[2],
             "location": content[4] + ", " + content[3],
             "radius": content[0] + "000",
-            "available": "false",
+            "available": "true",
             "limit": "5",
             "categories": "restaurants, nightlife, food"
         }
@@ -28,7 +28,7 @@ def main(content):
             "term": content[2],
             "location": content[3],
             "radius": content[0] + "000",
-            "available": "false",
+            "available": "true",
             "limit": "5",
             "categories": "restaurants, nightlife, food"
         }
