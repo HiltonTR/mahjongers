@@ -23,3 +23,16 @@ Flask and GitHub
 
 # What's next for mahjongers
 QOL changes. Hoping to add pictures of the food and possibly a way to order food
+
+# How to use:
+1) Make sure that all the dependencies are installed from requirement.txt
+
+# To Run:
+clone this repository
+cd into the repository
+to start up the flask server
+    (on windows): $env:FLASK_APP = "server" followed by flask run
+    (on mac): FLASK_APP = server flask run
+navvigate over to the server started by flask and enter all the required parameters and hit begin and see for yourself!
+
+This project was made collectively by Jakob Lau, Thomas Huynh, Kallie Huynh and Hilton Truong
