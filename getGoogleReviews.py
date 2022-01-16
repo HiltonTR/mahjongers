@@ -60,5 +60,3 @@ def test():
     print(resturauntImage)
     driver.quit()
     #print(reviewsSearched, " " , numberOfReviews, " ", Rating)
-
-test()
