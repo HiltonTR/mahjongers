@@ -2,9 +2,12 @@ var output = document.getElementById("demo");
 var slider = document.getElementById("radius-slider").oninput = function() {
     output.innerHTML = `${this.value}` + " km";
 };
+
 const body = document.querySelector("body");
 const submitButton = document.getElementById("submit-button");
 submitButton.addEventListener("mousebuttonup", submit);
+
+const response;
 
 async function submit() {
     localStorage.clear();
@@ -26,6 +29,7 @@ async function submit() {
             body: JSON.stringify(formArray) // body data type must match "Content-Type" header
         }).then(data => data.json());
         localStorage.setItem("response", JSON.stringify(response));
+        response = localStorage.getItem("response");
         displayResults();
     }
 }
@@ -61,13 +65,20 @@ function getOptionalInputs() {
 }
 
 function displayResults() {
-    console.log("hello");
+    body.classList.toggle("fade-in");
+    console.log("clearing the webpage...");
     clearBody(body);
+    body.classList.toggle("fade-out");
     // add a title
-    body.style.cssText = "opacity: 1";
-    addTitle(body);
+    console.log("Adding a title")
+    addTitle(body)
+    console.log("finished adding a title")
     // display the results max 5 could be less
+    addResult(body);
+    console.log(localStorage.getItem(response));
+
     // add a restaurant
+
 }
 
 function clearBody(parent) {
@@ -77,7 +88,15 @@ function clearBody(parent) {
 }
 
 function addTitle(parent) {
-    var title = document.createElement("div");
+    var title = document.createElement("h1");
     title.innerText = "Results";
+    title.classList.add("title");
+    title.classList.add("fade-in")
     parent.appendChild(title);
+}
+
+console.log(localStorage.getItem(response));
+function addResult(parent) {
+    var resultsContainer = document.createElement("div");
+
 }
