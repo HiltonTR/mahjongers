@@ -41,13 +41,16 @@ def main(content):
     restaurantList, address_list = getInfo()
     # Hilton Code
     chrome_options = Options()
-    chrome_options.add_argument('--headless')
+    #chrome_options.add_argument('--headless')
     chrome_options.add_argument('window-size=1920x1080')
     driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options = chrome_options)
     for i in range(0, len(restaurantList)):
-        reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, restaurantList[i] + " " + inputs['location'])
-        # Jakob's Code
-        restaurant_dict.update(getRestaurantOrder(restaurantList[i], Rating, reviewsSearched, mood))
+        try:
+            reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, restaurantList[i] + " " + inputs['location'])
+            # Jakob's Code
+            restaurant_dict.update(getRestaurantOrder(restaurantList[i], Rating, reviewsSearched, mood))
+        except:
+            pass
 
     sort_order = sorted(restaurant_dict.items(), key=lambda x: x[1], reverse=True)
     driver.quit()

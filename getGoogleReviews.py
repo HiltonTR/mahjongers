@@ -13,7 +13,7 @@ def extract_google_reviews(driver, resturauntName):
     driver.get('https://www.google.com/?hl=en')
     driver.find_element_by_name('q').send_keys(resturauntName)
     try:
-        WebDriverWait(driver, 15).until(EC.element_to_be_clickable((By.NAME, 'btnK'))).click()
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, 'btnK'))).click()
     except:
         driver.find_element_by_name('q').send_keys(Keys.ENTER)
 
@@ -23,7 +23,7 @@ def extract_google_reviews(driver, resturauntName):
     numberOfReviews = int((Link.text.split()[0]).replace(',', ''))
     Link.click()
 
-    allReviews = WebDriverWait(driver, 15).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div.gws-localreviews__google-review')))
+    allReviews = WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div.gws-localreviews__google-review')))
     if(numberOfReviews > 20):
         totalReviews = 20
     else:
@@ -31,7 +31,7 @@ def extract_google_reviews(driver, resturauntName):
 
     while len(allReviews) < totalReviews:
         driver.execute_script('arguments[0].scrollIntoView(true);', allReviews[-1])
-        WebDriverWait(driver, 15, 0.25).until_not(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[class$="activityIndicator"]')))
+        WebDriverWait(driver, 10, 0.1).until_not(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[class$="activityIndicator"]')))
         allReviews = driver.find_elements_by_css_selector('div.gws-localreviews__google-review')
 
     reviewsSearched = 0
