@@ -3,8 +3,10 @@ import os
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
+
 
 def extract_google_reviews(driver, resturauntName):
     driver.get('https://www.google.com/?hl=en')
@@ -12,6 +14,7 @@ def extract_google_reviews(driver, resturauntName):
     WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.NAME, 'btnK'))).click()
 
     Header = driver.find_element_by_css_selector('div.kp-header')
+    Rating = Header.find_element_by_xpath('div[2]/div[2]/div[1]/div[1]/span[1]').get_attribute('innerHTML')
     Link = Header.find_element_by_partial_link_text('Google reviews')
     numberOfReviews = int((Link.text.split()[0]).replace(',', ''))
     Link.click()
@@ -42,10 +45,14 @@ def extract_google_reviews(driver, resturauntName):
         text.write("\n")
         
     text.close()
-    return reviewsSearched, numberOfReviews
+    return reviewsSearched, numberOfReviews, Rating
 
 def test():
-    driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe")
-    reviewsSearched, numberOfReviews = extract_google_reviews(driver, 'japonais')
+    #chrome_options = Options()
+    #chrome_options.add_argument("--headless")
+    driver = webdriver.Chrome(os.getcwd() + r"/chromedriver_win32/chromedriver.exe", options=chrome_options)
+    reviewsSearched, numberOfReviews, Rating = extract_google_reviews(driver, 'japonais')
     driver.quit()
-    print(reviewsSearched, " " , numberOfReviews)
+    print(reviewsSearched, " " , numberOfReviews, " ", Rating)
+
+test()
