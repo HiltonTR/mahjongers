@@ -77,11 +77,7 @@ body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
-<<<<<<< HEAD
-    grid-gap: 100px;
-=======
     grid-gap: 5vh;
->>>>>>> functional
 }
 
 .param-container {

@@ -17,10 +17,6 @@ async function submit() {
     if (textInputsArray.length < 3) {
         alert("Please fill in the required (*) fields!");
     } else {
-<<<<<<< HEAD
-        // window.location.href = "/results.html";
-=======
->>>>>>> functional
         body.classList.toggle("fade-out");
         const formArray = radius.concat(textInputsArray);
         // localStorage.setItem("form", formArray)
