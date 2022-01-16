@@ -62,4 +62,3 @@ def test():
     driver.quit()
     #print(reviewsSearched, " " , numberOfReviews, " ", Rating)
 
-test()
