@@ -137,7 +137,7 @@ function addResults(parentNode, anObject) {
 }
 
 function getRatingString(floatRating) {
-    const filledStars = Math.round((floatRating/6)*10);  // scale the biased reviews
+    const filledStars = Math.round(floatRating);  // scale the biased reviews
     const emptyStars = 10 - filledStars;
 
     // const filledCharCode = "\u2605";
