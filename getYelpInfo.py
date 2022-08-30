@@ -4,8 +4,11 @@ from unicodedata import category
 import requests
 import json
 from spellchecker import SpellChecker
+from dotenv import dotenv_values
+
 # ------------------------ NECESSARY INFO TO USE YELP API ----------------------------------------
-api_key = '9BqKWX1mOXXiQqomscePk5OUJ4YhoI2BS-cNLAkQq63KTLoONoPxyvJ9YCDlCHRoskLeUSn70s4gCIrwrL6T3TgBiSo4o-bwqBFBcMmzUS3-tarHNs6Bhw8mWHziYXYx'
+config = dotenv_values('.env')
+api_key = config['YELP_API_KEY']
 headers = {'Authorization': 'Bearer %s' % api_key}
 
 url = 'https://api.yelp.com/v3/businesses/search'

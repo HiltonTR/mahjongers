@@ -16,11 +16,8 @@ Using Python for backend and HTML,CSS and JS for frontend. Used the Yelp API to 
 # Challenges we ran into
 Connecting the front end to the back end. Merge conflicts on GitHub
 
-# Accomplishments that we're proud of
-The code runs (barely)
-
 # What we learned
-Flask and GitHub
+Flask and Git
 
 # What's next for mahjongers
 QOL changes. Hoping to add pictures of the food and possibly a way to order food

@@ -1,20 +1,21 @@
 {
     "restaurants": [
         {
-            "name": "The Lingnan",
-            "rating": 4.0,
+            "name": "Chili Hot Pot",
+            "rating": 4.5,
             "address": [
-                "10582 104 Street NW",
-                "Edmonton, AB T5H 2W1",
+                "7219 104 Street NW",
+                "Edmonton, AB T6E 4B8",
                 "Canada"
             ]
         },
         {
-            "name": "Himitsu",
-            "rating": 3.5,
+            "name": "LETS Grill Restaurant",
+            "rating": 4.0,
             "address": [
-                "3050 Peachtree Rd NW",
-                "Atlanta, GA 30305"
+                "5926 104th Street NW",
+                "Edmonton, AB T6H 2K3",
+                "Canada"
             ]
         },
         {
@@ -27,20 +28,20 @@
             ]
         },
         {
-            "name": "Blue Orchid Chinese Restaurant",
+            "name": "All Happy Family Restaurant",
             "rating": 3.5,
             "address": [
-                "11235 Jasper Avenue",
-                "Edmonton, AB T5K 0L5",
+                "10011 106 Avenue NW",
+                "Edmonton, AB T5H 0N8",
                 "Canada"
             ]
         },
         {
-            "name": "Chicken King Chinese Restaurant",
-            "rating": 5.0,
+            "name": "Oodle Noodle",
+            "rating": 3.0,
             "address": [
-                "10951 - 101 Street NW",
-                "Edmonton, AB T5H 2S7",
+                "10842 Jasper Avenue",
+                "Edmonton, AB T5J 1Y8",
                 "Canada"
             ]
         }

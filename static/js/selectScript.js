@@ -19,6 +19,8 @@ async function submit() {
     } else {
         body.classList.toggle("fade-out");
         const formArray = radius.concat(textInputsArray);
+        console.log('formArray', formArray);
+        
         // localStorage.setItem("form", formArray)
         const response = await fetch("http://127.0.0.1:5000/form", {
             method: 'POST',
@@ -37,7 +39,6 @@ async function submit() {
 //window.location.href = '/results.html'
 //to be used in rest.... page
 //console.log(JSON.parse(localStorage.getItem("response")))
-
 
 function getSliderValue() {
     var slider = document.getElementById("radius-slider");
@@ -99,6 +100,13 @@ function addResults(parentNode, anObject) {
     
     var response = anObject;
 
+    if (response === {}) {
+        const noResultsMsg = document.createElement("h3");
+        noResultsMsg.innerText = 'No currently open restaurants that meet the criteria... try again!';
+        parentNode.appendChild(noResultsMsg);
+        return
+    }
+
     for (const property in response) {
         var titleText = property;
         var ratingValue = response[property];
@@ -137,11 +145,8 @@ function addResults(parentNode, anObject) {
 }
 
 function getRatingString(floatRating) {
-    const filledStars = Math.round(floatRating);  // scale the biased reviews
+    const filledStars = Math.round(floatRating);
     const emptyStars = 10 - filledStars;
-
-    // const filledCharCode = "\u2605";
-    // const emptyCharCode = "\u2606";
 
     const filledStarsString = '\u2605'.repeat(filledStars);
     const emptyStarsString = '\u2606'.repeat(emptyStars);
